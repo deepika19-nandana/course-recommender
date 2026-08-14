@@ -74,7 +74,7 @@ Delta{Curriculum} = ({Target Domain Scope} - {Existing Baseline Skills})x{Educat
 
 📂 File-by-File Architecture Breakdown
 course-recommender/
-│-test_main.py            #
+│-test_main.py            # test: sync database schema and add automated pytest suite
 ├── .env                  # Private API keys (Gemini API token)
 ├── .env.example          # Environment variable template for reviewers
 ├── requirements.txt      # Python dependencies lockfile
