@@ -3,4 +3,7 @@ uvicorn
 streamlit
 google-genai
 python-dotenv
+pydantic
 requests
+pytest
+httpx
