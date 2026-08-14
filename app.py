@@ -22,7 +22,7 @@ if page == "Build Custom Roadmap":
         with col1:
             education = st.text_input(
                 "Current Education / Background", 
-                placeholder="e.g., 6th Sem B.E. CS, B.Com, High School, Medical Resident, Self-Taught"
+                placeholder="e.g., 6th Sem B.E. CS"
             )
             
             goal_type = st.radio(
@@ -33,7 +33,7 @@ if page == "Build Custom Roadmap":
             
             goal_name = st.text_input(
                 "Target Domain, Profession, or Subject Name", 
-                placeholder="e.g., Clinical Psychology, Quantum Cryptography, Cinematography, CEO Leadership, Carpentry, Rust"
+                placeholder="e.g., Clinical Psychology"
             )
             
         with col2:
@@ -57,7 +57,7 @@ if page == "Build Custom Roadmap":
             
             existing_skills = st.text_area(
                 "Skills & Knowledge You Already Have (Baseline)", 
-                placeholder="e.g., Basic algebra, C syntax, color theory, financial accounting. (The AI will subtract these to start higher!)"
+                placeholder="e.g., Basic algebra"
             )
             
         submit_btn = st.form_submit_button("🚀 Synthesize Personalized Roadmap")
