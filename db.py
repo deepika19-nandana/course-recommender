@@ -6,20 +6,21 @@ def init_db():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     
-    # Table 1: Roadmaps
-    cursor.execute('''
+    # 1. Roadmaps Table
+    cursor.execute("""
         CREATE TABLE IF NOT EXISTS roadmaps (
             id TEXT PRIMARY KEY,
-            domain TEXT NOT NULL,
+            domain TEXT,
             education TEXT,
             timeline_weeks INTEGER,
             reasoning TEXT,
+            market_trends TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
-    ''')
+    """)
     
-    # Table 2: Daily Checkbox Tasks
-    cursor.execute('''
+    # 2. Daily Tasks Table (Matches main.py insertion columns exactly)
+    cursor.execute("""
         CREATE TABLE IF NOT EXISTS daily_tasks (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             roadmap_id TEXT,
@@ -28,13 +29,13 @@ def init_db():
             task_title TEXT,
             task_description TEXT,
             is_completed INTEGER DEFAULT 0,
-            FOREIGN KEY (roadmap_id) REFERENCES roadmaps (id) ON DELETE CASCADE
+            FOREIGN KEY (roadmap_id) REFERENCES roadmaps(id)
         )
-    ''')
+    """)
     
     conn.commit()
     conn.close()
 
 if __name__ == "__main__":
     init_db()
-    print("Database initialized successfully!")
+    print("Database initialized successfully with exact matching columns.")
